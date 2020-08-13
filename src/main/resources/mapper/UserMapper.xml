@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <resultMap id="userList" type="com.example.demo.bean.UserBean">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="age" column="age"></result>
+    </resultMap>
+
+    <select id="getUser" resultType="com.example.demo.bean.UserBean">
+        SELECT * FROM `ssm`
+    </select>
+
+    <select id="getUserList" resultMap="userList">
+        SELECT * FROM `ssm`
+    </select>
+
+</mapper>
